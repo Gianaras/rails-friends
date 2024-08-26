@@ -1,0 +1,46 @@
+<% content_for :title, "Friends" %>
+
+<% if user_signed_in? %>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Twitter</th>
+        <!--<th>User Id</th>-->
+        <th> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+          <tr>
+            <td><%= link_to friend.first_name + " " + friend.last_name, friend %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.phone %></td>
+            <td><%= friend.twitter %></td>
+            <!--<td><%= friend.user_id %></td>-->
+            <td><%= button_to "Delete", friend, method: :delete, class: "btn btn-danger", data: { turbo_confirm: 'Are you sure you want to delete this friend?' } %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to "New friend", new_friend_path, class:"btn btn-primary" %>
+
+<% else %>
+
+<h1>Welcome Brother 🙏</h1>
+
+<h5>
+  </br>Log in to see your digital friends!
+  </br>Don't forget to listen to the voices!
+</h5>
+
+<% end %>

@@ -1,0 +1,16 @@
+<% content_for :title, "Editing friend" %>
+
+<h1>Editing friend</h1>
+
+<%= render "form", friend: @friend %>
+
+</br>
+
+<div>
+  <%= link_to "Back to friends", friends_path, class:"btn btn-dark" %>
+</div>
+
+</br>
+
+<%= button_to "Destroy this friend", @friend, method: :delete, class: "btn btn-danger", data: { turbo_confirm: 'Are you sure you want to delete this friend?' } %>
+
