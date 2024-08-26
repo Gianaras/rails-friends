@@ -1,24 +1,4 @@
-# README
+# Tiny friends management full-stack app
+Mostly made to learn the basics of ruby on rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It includes users, signing up/in, and the CRUD for managing a friends list per user.
